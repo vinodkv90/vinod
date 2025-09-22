@@ -12,21 +12,22 @@ type Props = {
     target?: string,
     rel?: string,
     size?: 'sm' | 'md' | 'lg',
+    rest?: React.ButtonHTMLAttributes<HTMLButtonElement> | React.AnchorHTMLAttributes<HTMLAnchorElement>,
 }
 
 const Button = (props: Props) => {
-    const {variant, children, onClick, type, className, disabled, as, href, target, rel, size} = props
-  return (
-    as === 'button' ? (
-        <button className={`${className} ${variant ? `btn-${variant}` : 'btn-primary'} ${size ? `btn-${size}` : 'md'} font-montserrat rounded-sm px-4 py-0 flex items-center justify-center text-xs text-background font-medium uppercase leading-[1]`} onClick={onClick} type={type} disabled={disabled}>
-            {children}
-        </button>
-    ) : (
-        <a className={`${className} ${variant ? `btn-${variant}` : 'btn-primary'} ${size ? `btn-${size}` : 'md'} font-montserrat rounded-sm px-4 py-0 flex items-center justify-center text-xs font-medium uppercase leading-[1]`} href={href} onClick={onClick} target={target} rel={rel}>
-            {children}
-        </a>
+    const {variant, children, onClick, type, className, disabled, as, href, target, rel, size, ...rest} = props
+    return (
+        as === 'button' ? (
+            <button className={`${className} ${variant ? `btn-${variant}` : 'btn-primary'} ${size ? `btn-${size}` : 'md'} font-montserrat rounded-sm px-4 py-0 flex items-center justify-center text-xs text-background font-medium uppercase leading-[1]`} onClick={onClick} type={type} disabled={disabled} {...rest}>
+                {children}
+            </button>
+        ) : (
+            <a className={`${className} ${variant ? `btn-${variant}` : 'btn-primary'} ${size ? `btn-${size}` : 'md'} font-montserrat rounded-sm px-4 py-0 flex items-center justify-center text-xs font-medium uppercase leading-[1]`} href={href} onClick={onClick} target={target} rel={rel} {...rest}>
+                {children}
+            </a>
+        )
     )
-  )
 }
 
 export default Button

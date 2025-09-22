@@ -97,7 +97,7 @@ body {
     @apply bg-secondary text-foreground border border-secondary hover:bg-secondary-hover hover:border-secondary-hover;
   }
   .btn-blank {
-    @apply bg-background text-color border border-border hover:bg-border hover:border-border;
+    @apply bg-background text-foreground border border-border hover:bg-shade hover:border-primary;
   }
   .btn-sm {
     @apply h-8 px-2;

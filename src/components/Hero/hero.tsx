@@ -8,9 +8,9 @@ type Props = {
 const Hero = (props: Props) => {
     const {url} = props
   return (
-    <section className='section min-h-[80vh] flex items-center'>
+    <section className='section min-h-[70vh] flex items-center'>
         <div className="container mx-auto px-3 md:max-w-[720px]">
-            <figure className='w-full sm:w-1/2 md:w-[120px] relative overflow-hidden after:block after:w-full after:pb-[100%] rounded-sm'>
+            <figure className='w-[120px] relative overflow-hidden after:block after:w-full after:pb-[100%] rounded-sm'>
                 <Image src={url ?? '/image.jpg'} alt='hero' className='w-full h-auto object-cover object-center' fill />
             </figure>
             <h1 className='mt-4 text-color font-normal text-lg md:text-lg'>
