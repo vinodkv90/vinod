@@ -15,7 +15,7 @@ const Header = (props: Props) => {
                     <span className="block px-2 py-1 bg-foreground font-montserrat font-bold text-xs text-background tracking-[2px] uppercase">
                         Vinod's
                     </span>
-                    <span className='font-bimbo font-regular text-foreground relative z-10'>Portfolio</span>
+                    <span className='font-bimbo font-regular text-foreground relative z-10 text-shadow-[0_0_0_rgba(255,255,255,0.9)] text-shadow-background'>Portfolio</span>
                 </Link>
                 <Menu menu={MENU} />
                 <MobileMenu menu={MENU} />

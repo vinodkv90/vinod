@@ -82,7 +82,7 @@ body {
 
 @layer components {
   .section {
-    @apply py-25 bg-gray-50;
+    @apply py-25;
     & + .section {
       @apply bg-background;
     }

@@ -2,19 +2,21 @@ import React from 'react'
 import Button from '../Button'
 import Icon from '../Icon'
 
-type Props = {}
+type Props = {
+  isAbout?: boolean
+}
 
 const Follow = (props: Props) => {
+  const {isAbout} = props
   return (
-    <section className='section bg-gray-50'>
+    <section className='section'>
         <div className='container mx-auto px-3 md:max-w-[720px]'>
-            <h2 className='text-foreground font-normal text-xl md:text-2xl font-dela-gothic'>Elsewhere</h2>
-            <p className='mt-3 text-color font-semibold font-montserrat leading-6'>{`Full-stack developer passionate about crafting seamless digital experiences. Skilled in React, Next.js, and Strapi, with a strong foundation in UI/UX design. Constant learner, problem solver, and tech enthusiast who loves turning ideas into impactful solutions.`}</p>
-            <div className='flex flex-wrap gap-2 mt-5'>
+            <h2 className={`text-foreground font-normal text-lg md:text-xl font-dela-gothic ${isAbout ? 'text-center' : ''}`}>Follow Me</h2>
+            <div className='flex flex-wrap gap-2 mt-7'>
               {
                 ICONS.map((icon) => (
-                  <Button as='a' href={icon.url} target='_blank' rel='noopener noreferrer' variant='blank' size="sm" className='!capitalize !px-3' key={icon.id}>
-                    <Icon icon={icon.icon} size={16} color='currentColor' className='mr-1 !block' /> {icon.name}
+                  <Button as='a' href={icon.url} target='_blank' rel='noopener noreferrer' variant='blank' size="sm" className='!capitalize !px-3 w-[calc(50%-6px)] sm:w-[calc(25%-6px)]' key={icon.id}>
+                    <Icon icon={icon.icon} size={16} color='currentColor' className='mr-1 !block min-w-4' /> {icon.name}
                   </Button>
                 ))
               }
@@ -34,19 +36,19 @@ const ICONS = [
     url: 'https://github.com/vinodkv90',
   },
   {
-    id: 1,
+    id: 2,
     icon: 'linkedin',
     name: 'Linkedin',
     url: 'https://github.com/vinodkv90',
   },
   {
-    id: 1,
+    id: 3,
     icon: 'instagram',
     name: 'Instagram',
     url: 'https://github.com/vinodkv90',
   },
   {
-    id: 1,
+    id: 4,
     icon: 'youtube',
     name: 'Youtube',
     url: 'https://github.com/vinodkv90',

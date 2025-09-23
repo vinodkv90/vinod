@@ -57,7 +57,7 @@ export const viewport: Viewport = {
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">
-      <body className={`${delaGothicOne.variable} ${montserrat.className} ${bimbo.variable} antialiased`}>
+      <body className={`${delaGothicOne.variable} ${montserrat.className} ${bimbo.variable} antialiased select-none`}>
         <PublicLayout>{children}</PublicLayout>
       </body>
     </html>
