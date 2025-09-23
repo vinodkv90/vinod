@@ -15,7 +15,7 @@ const Banner = (props: Props) => {
                     <figure className='w-full h-full absolute overflow-hidden z-0'>
                         <Image src={src ?? '/gradient.jpg'} alt={title} fill />
                     </figure>
-                    <h1 className='text-background font-dela-gothic font-normal text-lg md:text-xl m-0 z-[1] tracking-widest uppercase'>{title}</h1>
+                    <h1 className='text-white font-dela-gothic font-normal text-lg md:text-xl m-0 z-[1] tracking-widest uppercase'>{title}</h1>
                 </div>
             </div>
         </section>

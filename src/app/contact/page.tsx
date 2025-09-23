@@ -1,5 +1,4 @@
-import Footer from '@/components/Footer'
-import Projects from '@/components/Projects'
+import ContactForm from '@/components/ContactForm'
 import React from 'react'
 
 type Props = {}
@@ -7,8 +6,7 @@ type Props = {}
 const page = (props: Props) => {
   return (
     <>
-        <Projects />
-        <Footer />
+        <ContactForm />
     </>
   )
 }

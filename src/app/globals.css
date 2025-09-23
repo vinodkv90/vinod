@@ -10,6 +10,7 @@
   --secondary-hover: #d65600;
   --border: #e4e4e4;
   --shade: #f1f1f1;
+  --footer: #ededed;
   --success: #24a32e;
   --danger: #ff1818;
   --todo-gutter-x: 1.5rem;
@@ -36,7 +37,8 @@
     --secondary: #d65600;
     --secondary-hover: #e75d00;
     --border: #4e4e4e;
-    --shade: #4d4d4d;
+    --shade: #252525;
+    --footer: #242424;
     --success: #00ca11;
     --danger: #ff1818;
     --overlay: #ffffff50;
@@ -57,6 +59,7 @@
   --color-secondary-hover: var(--secondary-hover);
   --color-border: var(--border);
   --color-shade: var(--shade);
+  --color-footer: var(--footer);
   --color-success: var(--success);
   --color-danger: var(--danger);
   --color-overlay: var(--overlay);

@@ -40,7 +40,7 @@ const MENU = [
     },
     {
         id: 3,
-        name: 'Blog',
-        link: '/blog'
+        name: 'Blogs',
+        link: '/blogs'
     },
 ]
