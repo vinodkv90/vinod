@@ -15,7 +15,7 @@ const Follow = (props: Props) => {
             <div className='flex flex-wrap gap-2 mt-7'>
               {
                 ICONS.map((icon) => (
-                  <Button as='a' href={icon.url} target='_blank' rel='noopener noreferrer' variant='blank' size="sm" className='!capitalize !px-3 w-[calc(50%-6px)] sm:w-[calc(25%-6px)]' key={icon.id}>
+                  <Button as='a' href={icon.url} target='_blank' rel='noopener noreferrer' variant='blank' size="sm" className='!capitalize !px-3 w-[calc(50%-6px)] sm:w-[calc(25%-6px)] !text-foreground' key={icon.id}>
                     <Icon icon={icon.icon} size={16} color='currentColor' className='mr-1 !block min-w-4' /> {icon.name}
                   </Button>
                 ))

@@ -1,13 +1,19 @@
-import Follow from "@/components/Follow";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
+import { RootObject, Widget } from "@/types/home";
+import { nextFetch } from "@/utils/nextFetch";
+import Block from "./blocks";
+import React from "react";
 
-export default function Home() {
+export default async function Home() {
+  const {data}: RootObject = await nextFetch('/home');
   return (
     <div className="font-bimbo">
-      <Hero url='/image.jpg' />
-      <Follow />
-      <Footer />
+      {
+        data?.widgets.map((widget: any) => (
+          <React.Fragment key={widget.widgetType}>
+            <Block widget={widget} />
+          </React.Fragment>
+        ))
+      }
     </div>
   );
 }

@@ -1,22 +1,23 @@
-import Banner from '@/components/Banner'
-import Contact from '@/components/Contact'
-import Experience from '@/components/Experience'
-import Follow from '@/components/Follow'
-import Skills from '@/components/Skills'
+import { RootObject } from '@/types/home'
+import { nextFetch } from '@/utils/nextFetch'
 import React from 'react'
+import Block from '../blocks'
 
 type Props = {}
 
-const page = (props: Props) => {
+const page = async (props: Props) => {
+  const {data}: RootObject = await nextFetch('/about');
   return (
-    <>
-      <Banner title='About' src='/gradient.jpg' />
-      <Contact />
-      <Experience />
-      <Skills />
-      <Follow isAbout />
-    </>
-  )
+    <div className="font-bimbo">
+      {
+        data?.widgets.map((widget: any) => (
+          <React.Fragment key={widget.widgetType}>
+            <Block widget={widget} />
+          </React.Fragment>
+        ))
+      }
+    </div>
+  );
 }
 
 export default page
