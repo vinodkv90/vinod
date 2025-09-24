@@ -10,7 +10,7 @@ const ContactForm = (props: Props) => {
     const { handleSubmit, register, onSubmit, errors, isSubmitting } = useContactForm({})
     console.log('errors', errors)
     return (
-        <section className='pb-20 min-h-[calc(100vh-53px)] md:min-h-[calc(100vh-66px)] flex items-center justify-center'>
+        <section className='pt-20 md:pt-0 pb-10 md:pb-20 md:min-h-[calc(100vh-66px)] flex items-center justify-center'>
             <div className="container mx-auto px-3 md:max-w-[720px]">
             <h2 className='text-foreground font-dela-gothic font-normal text-lg md:text-xl text-center'>{`Contact Me`}</h2>
             <p className='mt-5 max-w-lg mx-auto text-foreground font-montserrat font-medium text-center'>I’d love to hear from you! Whether you’re looking to collaborate, have a project in mind, or just want to connect, feel free to reach out.</p>

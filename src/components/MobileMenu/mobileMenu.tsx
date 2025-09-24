@@ -28,12 +28,12 @@ const MobileMenu = (props: Props) => {
                     <div className="flex flex-col items-center justify-center">
                         {
                             menu.map((item) => (
-                                <Link key={item?.id} href={item?.link} className='text-foreground font-bold px-3 py-5 hover:text-primary leading-[1]'>
+                                <Link key={item?.id} href={item?.link} className='text-foreground font-bold px-3 py-5 hover:text-primary leading-[1]' onClick={() => setIsOpen(false)}>
                                     {item.name}
                                 </Link>
                             ))
                         }
-                        <Link href={'/contact'} className='text-foreground font-bold px-3 py-5 hover:text-primary leading-[1]'>
+                        <Link href={'/contact'} className='text-foreground font-bold px-3 py-5 hover:text-primary leading-[1]' onClick={() => setIsOpen(false)}>
                             {'Contact'}
                         </Link>
                     </div>
