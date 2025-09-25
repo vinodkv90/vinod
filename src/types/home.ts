@@ -43,3 +43,25 @@ export type RootObject = {
     widgets: Widget[];
   };
 };
+
+export interface ProjectImage {
+  id: number;
+  url: string;
+  alternativeText: string | null;
+  width: number;
+  height: number;
+  caption: string | null;
+}
+
+export interface Project {
+  title: string;
+  description: string | null;
+  image: ProjectImage;
+  is_large: boolean;
+}
+
+export interface ProjectsResponse {
+  title: string;
+  description: string | null;
+  projects: Project[];
+}

@@ -11,7 +11,7 @@ const Skills = (props: Props) => {
                 <div className="flex flex-wrap gap-2">
                     {
                         skills.map((skill) => (
-                            <div className="bg-shade text-foreground h-7 px-2.5 py-1 rounded-sm font-bold text-xs flex items-center justify-center hover:bg-primary hover:text-background" key={skill.id}>{skill.name}</div>
+                            <div className="bg-shade text-foreground h-7 px-2.5 py-1 rounded-sm font-bold text-xs flex items-center justify-center font-montserrat" key={skill.id}>{skill.name}</div>
                         ))
                     }
                 </div>

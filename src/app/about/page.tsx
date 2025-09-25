@@ -8,7 +8,7 @@ type Props = {}
 const page = async (props: Props) => {
   const {data}: RootObject = await nextFetch('/about');
   return (
-    <div className="font-bimbo">
+    <>
       {
         data?.widgets.map((widget: any) => (
           <React.Fragment key={widget.widgetType}>
@@ -16,7 +16,7 @@ const page = async (props: Props) => {
           </React.Fragment>
         ))
       }
-    </div>
+    </>
   );
 }
 

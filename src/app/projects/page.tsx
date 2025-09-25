@@ -1,16 +1,14 @@
-import Footer from '@/components/Footer'
 import Projects from '@/components/Projects'
-import React from 'react'
+import { ProjectsResponse } from '@/types/home';
+import { nextFetch } from '@/utils/nextFetch'
 
-type Props = {}
 
-const page = (props: Props) => {
+const page = async () => {
+  const data = await nextFetch('/project-listing');
+  console.log(data);
   return (
-    <>
-        <Projects />
-        <Footer />
-    </>
-  )
+    <Projects {...(data as ProjectsResponse)} />
+  );
 }
 
 export default page
