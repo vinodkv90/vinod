@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 type Props = {
@@ -23,9 +24,9 @@ const Button = (props: Props) => {
                 {children}
             </button>
         ) : (
-            <a className={`${className} ${variant ? `btn-${variant}` : 'btn-primary'} ${size ? `btn-${size}` : 'md'} cursor-pointer font-montserrat rounded-sm px-4 py-0 flex items-center justify-center text-xs text-white font-medium uppercase leading-[1]`} href={href} onClick={onClick} target={target} rel={rel} {...rest}>
+            <Link className={`${className} ${variant ? `btn-${variant}` : 'btn-primary'} ${size ? `btn-${size}` : 'md'} cursor-pointer font-montserrat rounded-sm px-4 py-0 flex items-center justify-center text-xs text-white font-medium uppercase leading-[1]`} href={href} onClick={onClick} target={target} rel={rel} {...rest}>
                 {children}
-            </a>
+            </Link>
         )
     )
 }
