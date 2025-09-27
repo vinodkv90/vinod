@@ -17,7 +17,7 @@ type Props = {
 }
 
 const Button = (props: Props) => {
-    const {variant, children, onClick, type, className, disabled, as = 'button', href, target, rel, size, ...rest} = props
+    const {variant, children, onClick, type, className, disabled, as = 'button', href="", target, rel, size, ...rest} = props
     return (
         as === 'button' ? (
             <button className={`${className} ${variant ? `btn-${variant}` : 'btn-primary'} ${size ? `btn-${size}` : 'md'} cursor-pointer font-montserrat rounded-sm px-4 py-0 flex items-center justify-center text-xs text-white font-medium uppercase leading-[1]`} onClick={onClick} type={type} disabled={disabled} {...rest}>

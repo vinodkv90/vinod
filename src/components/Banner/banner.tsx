@@ -1,11 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
 
-type Props = {
-    title: string,
-    src: string
-}
-
 type Data = {
     title: string | null,
     image: {

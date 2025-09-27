@@ -3,11 +3,9 @@ import { nextFetch } from "@/utils/nextFetch"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { toast } from "sonner"
 
-type Props = {}
-
 type ContactResponse = {
     message: string;
-    [key: string]: any;
+    [key: string]: string | number | boolean | object | null | undefined;
 };
 
 const useContactForm = () => {

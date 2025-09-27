@@ -1,11 +1,8 @@
 import React from 'react'
-import Button from '../Button'
 import Icon from '../Icon'
 import Link from 'next/link'
 
-type Props = {}
-
-const Contact = (props: Props) => {
+const Contact = () => {
   return (
     <section className='pt-10 bg-background'>
         <div className="container mx-auto px-3 md:max-w-[720px]">

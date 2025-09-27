@@ -3,11 +3,8 @@ import React from 'react'
 import Input from '../Input'
 import Button from '../Button'
 import useContactForm from './useContactForm'
-import { toast } from 'sonner'
 
-type Props = {}
-
-const ContactForm = (props: Props) => {
+const ContactForm = () => {
     const { handleSubmit, register, onSubmit, errors, isSubmitting } = useContactForm()
     return (
         <section className='pt-20 md:pt-0 pb-10 md:pb-20 md:min-h-[calc(100vh-66px)] flex items-center justify-center'>
@@ -32,7 +29,7 @@ const ContactForm = (props: Props) => {
                             <Input as='textarea' placeholder='Message' type='text' {...register("message", { required: false, maxLength: 500 })}  ariaInvalid={errors.message ? true : false} error={errors?.message?.message} />
                         </div>
                         <div className="w-full">
-                            <Button type="submit" size='md' className='w-full'>Send</Button>
+                            <Button type="submit" size='md' className='w-full' disabled={isSubmitting}>Send</Button>
                         </div>
                     </form>
                 </div>
