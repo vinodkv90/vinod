@@ -1,21 +1,34 @@
+import { IFormInput } from "@/types/contact"
+import { nextFetch } from "@/utils/nextFetch"
 import { SubmitHandler, useForm } from "react-hook-form"
-
-interface IFormInput {
-  name: string
-  email: string
-  phone: number
-  subject: string
-  message: string
-}
+import { toast } from "sonner"
 
 type Props = {}
 
-const useContactForm = (props: Props) => {
+type ContactResponse = {
+    message: string;
+    [key: string]: any;
+};
+
+const useContactForm = () => {
 
     const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<IFormInput>()
 
-    const onSubmit: SubmitHandler<IFormInput> = (data) => {
-        console.log(data)
+    const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+        const response = await nextFetch<ContactResponse>(
+            '/contact/submit', 
+            'POST',
+            {
+                'Content-Type': 'application/json',
+            },
+            data,
+            "include"
+        )
+        console.log('response', response);
+        if(response) {
+            reset()
+            toast.success(response.message)
+        }
     }
 
     return {

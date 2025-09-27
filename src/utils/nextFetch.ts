@@ -1,8 +1,10 @@
+import { IFormInput } from "@/types/contact";
+
 export const nextFetch = async <T = unknown>(
   slug: string,
   method: string = "GET",
   headers: Record<string, string> = { "Content-Type": "application/json" },
-  body: unknown = null,
+  body: IFormInput | null = null,
   credentials: RequestCredentials = "include"
 ): Promise<T> => {
   if (!slug) {

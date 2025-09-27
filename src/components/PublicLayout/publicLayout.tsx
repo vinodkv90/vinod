@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../Header';
 import Footer from '../Footer';
+import { Toaster } from 'sonner';
 
 const PublicLayout = ({children}: Readonly<{children: React.ReactNode;}>) => {
   return (
@@ -8,6 +9,7 @@ const PublicLayout = ({children}: Readonly<{children: React.ReactNode;}>) => {
         <Header />
         <main>{children}</main>
         <Footer />
+        <Toaster position="bottom-right" richColors />
     </>
   )
 }

@@ -14,7 +14,8 @@
     "react-dom": "19.1.0",
     "react-feather": "^2.0.10",
     "react-hook-form": "^7.63.0",
-    "react-icomoon": "^2.6.1"
+    "react-icomoon": "^2.6.1",
+    "sonner": "^2.0.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
