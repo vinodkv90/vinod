@@ -1,4 +1,4 @@
-import { RootObject, Widget } from "@/types/home";
+import { RootObject } from "@/types/home";
 import { nextFetch } from "@/utils/nextFetch";
 import Block from "./blocks";
 import React from "react";
@@ -8,7 +8,7 @@ export default async function Home() {
   return (
     <div className="font-bimbo">
       {
-        data?.widgets.map((widget: any) => (
+        data?.widgets.map((widget) => (
           <React.Fragment key={widget.widgetType}>
             <Block widget={widget} />
           </React.Fragment>

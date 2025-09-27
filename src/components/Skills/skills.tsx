@@ -1,12 +1,10 @@
 import React from 'react'
 
-type Props = {}
-
-const Skills = (props: Props) => {
+const Skills = () => {
   return (
     <section className='pt-20'>
         <div className="container mx-auto px-3 md:max-w-[720px]">
-            <h2 className='text-foreground font-dela-gothic font-normal text-lg md:text-xl text-center'>{`My Skills`}</h2>
+            <h2 className='text-foreground font-dela-gothic font-normal text-lg md:text-xl text-center'>My Skills</h2>
             <div className="mt-7">
                 <div className="flex flex-wrap gap-2">
                     {

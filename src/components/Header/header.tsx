@@ -1,12 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 import Link from 'next/link'
 import React from 'react'
-import Button from '../Button'
 import Menu from '../Menu'
 import MobileMenu from '../MobileMenu'
 
-type Props = {}
-
-const Header = (props: Props) => {
+const Header = () => {
   return (
     <header className='border-b border-border py-1.5 bg-background sticky top-0 z-10'>
         <div className="container mx-auto px-3 md:max-w-[720px]">

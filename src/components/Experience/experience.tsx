@@ -1,8 +1,6 @@
 import React from 'react'
 
-type Props = {}
-
-const Experience = (props: Props) => {
+const Experience = () => {
   return (
     <section className='pt-20 bg-background'>
         <div className="container mx-auto px-3 md:max-w-[720px]">
