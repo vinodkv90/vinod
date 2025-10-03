@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
         port: '1337',
         pathname: '/uploads/**'
       },
+      {
+        protocol: "https",
+        hostname: process.env.NEXT_PUBLIC_IMAGES_ENDPOINT ?? "mindful-wealth-26c18ca11f.media.strapiapp.com",
+      },
     ]
   }
 };

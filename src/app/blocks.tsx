@@ -14,7 +14,6 @@ import Banner from "@/components/Banner";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
-import { Widget } from "@/types/home";
 
 export type WidgetBlockType =
   | typeof HERO_WIDGET
@@ -24,34 +23,37 @@ export type WidgetBlockType =
   | typeof MY_EXPERIENCE_WIDGET
   | typeof MY_SKILLS_WIDGET;
 
-const Default: React.FC = () => {
-  return <></>;
+export type DefaultWidget = {
+  widgetType: "default";
+  [key: string]: unknown;
 };
 
-export const setComponent = (
-  widget: Widget
-): ComponentType<Widget> => {
-  const componentMap: Record<WidgetBlockType | "default", ComponentType<any>> = {
-    [HERO_WIDGET]: Hero as ComponentType<any>,
-    [FOLLOW_WIDGET]: Follow as ComponentType<any>,
-    [ABOUT_BANNER_WIDGET]: Banner as ComponentType<any>,
-    [CONTACT_ME_WIDGET]: Contact as ComponentType<any>,
-    [MY_EXPERIENCE_WIDGET]: Experience as ComponentType<any>,
-    [MY_SKILLS_WIDGET]: Skills as ComponentType<any>,
-    default: Default,
-  };
+interface WidgetBase {
+  widgetType: WidgetBlockType;
+  [key: string]: unknown;
+}
 
-  return componentMap[widget.widgetType as keyof typeof componentMap] || componentMap["default"];
+const Default: React.FC = () => <></>;
+
+type WidgetComponentMap = Record<WidgetBlockType | "default", ComponentType<WidgetBase>>;
+
+const componentMap: WidgetComponentMap = {
+  [HERO_WIDGET]: Hero,
+  [FOLLOW_WIDGET]: Follow,
+  [ABOUT_BANNER_WIDGET]: Banner,
+  [CONTACT_ME_WIDGET]: Contact,
+  [MY_EXPERIENCE_WIDGET]: Experience,
+  [MY_SKILLS_WIDGET]: Skills,
+  default: Default,
 };
 
-type BlockProps = {
-  widget: Widget;
+const setComponent = (widget: WidgetBase): ComponentType<WidgetBase> => {
+  return componentMap[widget.widgetType] || componentMap.default;
 };
 
-const Block: React.FC<BlockProps> = ({ widget }) => {
-  // useMemo not really needed, but if you want:
-  const WidgetComponent = useMemo(() => setComponent(widget), [widget]);
-  return <WidgetComponent {...widget} />;
+const Block: React.FC<{ widget: WidgetBase }> = ({ widget }) => {
+  const Widget = useMemo(() => setComponent(widget), [widget]);
+  return <Widget {...widget} />;
 };
 
 export default Block;
