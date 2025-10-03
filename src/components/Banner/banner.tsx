@@ -12,7 +12,7 @@ type Data = {
     }
 }
 
-type BannerProps = {
+export type BannerProps = {
     component: Data | null
     data: Data | null
     widgetType: string

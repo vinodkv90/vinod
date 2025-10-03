@@ -11,7 +11,7 @@ interface data {
   experiences: ExperienceData[];
 }
 
-interface ExperienceProps {
+export interface ExperienceProps {
   component: string;
   data: data;
   widgetType: string;

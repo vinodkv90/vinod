@@ -1,7 +1,7 @@
 import { RootObject } from '@/types/home'
 import { nextFetch } from '@/utils/nextFetch'
 import React from 'react'
-import Block from '../blocks'
+import Block, { WidgetUnion } from '../blocks'
 
 const page = async () => {
   const {data}: RootObject = await nextFetch('/about');
@@ -10,7 +10,7 @@ const page = async () => {
       {
         data?.widgets.map((widget) => (
           <React.Fragment key={widget.widgetType}>
-            <Block widget={widget} />
+            <Block widget={widget as WidgetUnion} />
           </React.Fragment>
         ))
       }

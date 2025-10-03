@@ -10,7 +10,7 @@ interface data {
   skills: skills[];
 }
 
-interface SkillProps {
+export interface SkillProps {
   component: string;
   data: data;
   widgetType: string;

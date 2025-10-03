@@ -12,21 +12,21 @@ export interface Medium {
 }
 
 // Data part of the widget
-export interface FollowWidgetData {
+export interface ContactWidgetData {
   title: string;
   description?: string;
   contact_medium?: Medium[];
 }
 
 // Full widget type
-export interface FollowWidget {
+export interface ContactWidget {
   widgetType: "followWidget";
-  data: FollowWidgetData;
+  data: ContactWidgetData;
   component: "contact.follow";
 }
 
 
-const Contact = (props: FollowWidget) => {
+const Contact = (props: ContactWidget) => {
   const { data } = props;
   return (
     <section className='pt-10 bg-background'>
