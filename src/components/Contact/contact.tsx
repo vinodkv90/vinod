@@ -59,24 +59,3 @@ const Contact = (props: FollowWidget) => {
 }
 
 export default Contact
-
-const contact = [
-  // {
-  //   id: 1,
-  //   name: 'Location',
-  //   link: 'gsdcsdcbvsdyhcvg',
-  //   icon: 'location'
-  // },
-  {
-    id: 2,
-    name: 'Email',
-    link: 'mailto:vinodkv.developer@gmail.com',
-    icon: 'at'
-  },
-  {
-    id: 3,
-    name: 'Phone',
-    link: 'tel:+918547439747',
-    icon: 'phone'
-  },
-]

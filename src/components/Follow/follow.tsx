@@ -2,8 +2,6 @@ import React from 'react'
 import Button from '../Button'
 import Icon from '../Icon'
 
-interface Props {}
-
 export interface FollowLink {
   url: string;
   icon: "github" | "linkedin" | "instagram" | "youtube"; // restrict to known icons
@@ -45,30 +43,3 @@ const Follow = (props: FollowWidget) => {
 }
 
 export default Follow
-
-const ICONS = [
-  {
-    id: 1,
-    icon: 'github',
-    name: 'GitHub',
-    url: 'https://github.com/vinodkv90',
-  },
-  {
-    id: 2,
-    icon: 'linkedin',
-    name: 'Linkedin',
-    url: 'https://github.com/vinodkv90',
-  },
-  {
-    id: 3,
-    icon: 'instagram',
-    name: 'Instagram',
-    url: 'https://github.com/vinodkv90',
-  },
-  {
-    id: 4,
-    icon: 'youtube',
-    name: 'Youtube',
-    url: 'https://github.com/vinodkv90',
-  }
-]
