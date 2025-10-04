@@ -25,26 +25,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
   console.log(data, 'data in metadata');
   if (!seo) return {};
 
-  const og = seo.openGraph;
-
-  const validOgTypes = [
-    "website",
-    "article",
-    "book",
-    "profile",
-    "music.song",
-    "music.album",
-    "music.playlist",
-    "music.radio_station",
-    "video.movie",
-    "video.episode",
-    "video.tv_show",
-    "video.other",
-  ] as const;
-
-  const ogType = validOgTypes.includes(og?.ogType as any)
-    ? (og?.ogType as (typeof validOgTypes)[number])
-    : "website";
+  const { metaTitle, metaDescription, keywords, metaRobots, canonicalURL, openGraph } = seo;
 
   return {
     title: seo.metaTitle,
@@ -55,16 +36,11 @@ export const generateMetadata = async (): Promise<Metadata> => {
       canonical: seo.canonicalURL,
     },
     openGraph: {
-      title: og?.ogTitle || seo.metaTitle,
-      description: og?.ogDescription || seo.metaDescription,
-      url: og?.ogUrl || seo.canonicalURL,
-      type: ogType, // ✅ Now fully type-safe
-      images:
-        og?.ogImage?.url
-          ? [{ url: og.ogImage.url }]
-          : seo.metaImage
-          ? [{ url: seo.metaImage.url }]
-          : [],
+      title: openGraph?.ogTitle || seo.metaTitle,
+      description: openGraph?.ogDescription || seo.metaDescription,
+      url: openGraph?.ogUrl || seo.canonicalURL,
+      type: openGraph?.ogType || "website",
+      images: openGraph?.ogImage?.url ? [{ url: openGraph?.ogImage?.url }] : seo.metaImage ? [{ url: seo.metaImage.url }] : [],
     },
   };
 };
