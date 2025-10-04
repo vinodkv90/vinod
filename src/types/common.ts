@@ -127,3 +127,46 @@ export interface SeoData {
     }
   ];
 }
+
+export interface ImageData {
+  id?: number;
+  url: string;
+  alternativeText?: string | null;
+  width?: number;
+  height?: number;
+  caption?: string | null;
+}
+
+export interface OpenGraphData {
+  id?: number;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogUrl?: string;
+  ogType?: string;
+  ogImage?: ImageData;
+}
+
+export interface OpenGraphInterface {
+  title?: string | null;
+  description?: string | null;
+  url?: string | null;
+  type?: string | null;
+  images?: [
+    {
+      url: string | null;
+    }
+  ];
+}
+
+export interface Seo {
+  id?: number;
+  metaTitle: string;
+  metaDescription: string;
+  keywords?: string;
+  metaRobots?: string;
+  metaViewport?: string;
+  canonicalURL?: string;
+  structuredData?: Record<string, any>;
+  metaImage?: ImageData;
+  openGraph?: OpenGraphData; // 👈 this is the key fix
+}

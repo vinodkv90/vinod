@@ -1,3 +1,5 @@
+import { Seo } from "./common";
+
 // Image type
 export type Image = {
   id: number;
@@ -39,7 +41,7 @@ export type Widget = HeroWidget | FollowWidget;
 // Root object
 export type RootObject = {
   data: {
-    seo: Record<string, unknown>;
+    seo: Seo;
     widgets: Widget[];
   };
 };
