@@ -16,3 +16,28 @@ export default async function Home() {
     </div>
   );
 }
+
+export const generateMetadata = async () => {
+  const { data }: RootObject = await nextFetch("/home");
+  const seo = data?.seo;
+
+  console.log(data, 'data in metadata');
+  if (!seo) return {};
+
+  return {
+    title: seo.metaTitle,
+    description: seo.metaDescription,
+    keywords: seo.keywords,
+    robots: seo.metaRobots,
+    alternates: {
+      canonical: seo.canonicalURL,
+    },
+    openGraph: {
+      title: seo.ogTitle || seo.metaTitle,
+      description: seo.ogDescription || seo.metaDescription,
+      url: seo.ogUrl || seo.canonicalURL,
+      type: seo.ogType || "website",
+      images: seo.openGraph?.ogImage?.url ? [{ url: seo.openGraph?.ogImage?.url }] : seo.metaImage ? [{ url: seo.metaImage.url }] : [],
+    },
+  };
+};
