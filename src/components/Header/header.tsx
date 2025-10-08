@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import Link from 'next/link'
 import React from 'react'
 import Menu from '../Menu'
@@ -36,7 +35,7 @@ const Header = async () => {
                 <div className="flex items-center justify-between h-10 md:h-auto">
                     <Link href={data?.logo?.url} className='flex flex-col items-end gap-1 h-5'>
                         <span className="block px-2 py-1 bg-foreground font-montserrat font-bold text-xs text-background tracking-[2px] uppercase">
-                            {data?.logo?.title || 'My'}
+                            {data?.logo?.title ?? 'Portfolio'}
                         </span>
                         <span className='font-bimbo font-regular text-foreground relative z-10 text-shadow-[0_0_0_rgba(255,255,255,0.9)] text-shadow-background'>{data?.logo?.description}</span>
                     </Link>

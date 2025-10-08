@@ -24,7 +24,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
   if (!seo) return {};
 
-  const { metaTitle, metaDescription, keywords, metaRobots, canonicalURL, openGraph } = seo;
+  const { openGraph } = seo;
 
   return {
     title: seo.metaTitle,
