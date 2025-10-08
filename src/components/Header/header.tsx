@@ -49,21 +49,3 @@ const Header = async () => {
 }
 
 export default Header
-
-const MENU = [
-    {
-        id: 1,
-        name: 'About',
-        link: '/about'
-    },
-    {
-        id: 2,
-        name: 'Projects',
-        link: '/projects'
-    },
-    {
-        id: 3,
-        name: 'Blogs',
-        link: '/blogs'
-    },
-]
