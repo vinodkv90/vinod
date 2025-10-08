@@ -22,7 +22,6 @@ export const generateMetadata = async (): Promise<Metadata> => {
   const { data }: RootObject = await nextFetch("/home");
   const seo = data?.seo;
 
-  console.log(data, 'data in metadata');
   if (!seo) return {};
 
   const { metaTitle, metaDescription, keywords, metaRobots, canonicalURL, openGraph } = seo;

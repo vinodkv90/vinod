@@ -20,7 +20,6 @@ export type BannerProps = {
 
 const Banner = (props: BannerProps) => {
     const { data } = props
-    console.log(props);
     return (
         <section className='py-8 sm:py-12'>
             <div className="container mx-auto px-3 md:max-w-[720px]">

@@ -7,7 +7,7 @@ const PublicLayout = ({children}: Readonly<{children: React.ReactNode;}>) => {
   return (
     <>
         <Header />
-        <main>{children}</main>
+        <main className='min-h-[calc(100dvh-53px)] md:min-h-[calc(100dvh-66px)]'>{children}</main>
         <Footer />
         <Toaster position="bottom-right" richColors />
     </>

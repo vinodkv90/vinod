@@ -15,13 +15,18 @@ const Projects: React.FC<ProjectsResponse> = ({ title, projects }) => {
                                 <figure className='w-full relative overflow-hidden z-0 after:pb-40 after:block after:w-full bg-radial from-emerald-800 from-40% to-emerald-900'>
                                     {
                                         project?.image?.url ? (
-                                            <Image src={project?.image?.url} alt={project?.image?.alternativeText ?? project.title} fill className='transition-all group-hover:scale-90 group-hover:opacity-0 object-contain object-center max-w-[100px] max-h-[100px] !left-1/2 -translate-x-1/2 !top-1/2 -translate-y-1/2 grayscale brightness-[10000]' />
+                                            <Image 
+                                                src={project?.image?.url} 
+                                                alt={project?.image?.alternativeText ?? project.title} 
+                                                fill 
+                                                className='transition-all group-hover:scale-90 group-hover:opacity-0 object-contain object-center max-w-[100px] max-h-[100px] !left-1/2 -translate-x-1/2 !top-1/2 -translate-y-1/2 grayscale brightness-[10000] will-change-transform' 
+                                            />
                                         ) : (
-                                            <span className='text-white text-2xl font-black font-montserrat uppercase transition-all group-hover:scale-90 group-hover:opacity-0 block absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2'>{project.title}</span>
+                                            <span className='text-white text-2xl font-black font-montserrat uppercase transition-all group-hover:scale-90 group-hover:opacity-0 block absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 will-change-transform'>{project.title}</span>
                                         )
                                     }
                                 </figure>
-                                <div className="flex flex-col justify-end absolute inset-0 z-[1] opacity-0 group-hover:opacity-100 transition-all duration-300 bg-foreground p-4 bg-radial from-emerald-800 from-40% to-emerald-900">
+                                <div className="flex flex-col justify-end absolute inset-0 z-[1] opacity-0 group-hover:opacity-100 transition-all duration-300 bg-foreground p-4 bg-radial from-emerald-800 from-40% to-emerald-900 will-change-transform">
                                     <h3 className='text-background font-montserrat font-bold tracking-wide text-base'>{project.title}</h3>
                                     <p className='text-background font-montserrat font-medium line-clamp-2'>{project.description}</p>
                                 </div>
