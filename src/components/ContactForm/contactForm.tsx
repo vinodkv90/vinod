@@ -29,7 +29,7 @@ const ContactForm = () => {
                             <Input as='textarea' placeholder='Message' type='text' {...register("message", { required: false, maxLength: 500 })}  ariaInvalid={errors.message ? true : false} error={errors?.message?.message} />
                         </div>
                         <div className="w-full">
-                            <Button type="submit" size='md' className='w-full' disabled={isSubmitting}>Send</Button>
+                            <Button as='button' type="submit" size='md' className='w-full' disabled={isSubmitting}>Send</Button>
                         </div>
                     </form>
                 </div>
