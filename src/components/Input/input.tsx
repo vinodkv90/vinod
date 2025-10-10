@@ -16,7 +16,7 @@ type Props = {
 }
 
 const Input = (props: Props) => {
-    const {label, type, name, labelClass, className, containerClass, id='input', placeholder, as = 'input', error, ariaInvalid, ...rest} = props || {};
+    const {label, type, name, labelClass, className, containerClass, id='input', placeholder, as = 'input', error, ariaInvalid, ...rest} = props;
     return (
         <fieldset className={`${containerClass} relative flex flex-col font-normal gap-2` || ''}>
             {label && <label htmlFor={id || undefined} className={`text-foreground font-dela-gothic font-normal text-sm ${labelClass || ''}`}>{label}</label>}

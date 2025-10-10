@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect } from 'react'
 import Link from 'next/link'
-// import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import { usePathname } from 'next/navigation'
 import useToggle from '@/customHooks/useToggle'
 
@@ -18,11 +18,11 @@ type Props = {
 }
 
 const MobileMenu = (props: Props) => {
-    const {menu, contactButton} = props || {}
+    const {menu, contactButton} = props
     const { status, toggle, setFalse } = useToggle()
-    const pathname = usePathname() || null
+    const pathname = usePathname()
     useEffect(() => {
-        const scrollBarWidth = window?.innerWidth - document?.documentElement?.clientWidth;
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
         document.body.style.paddingRight = status ? `${scrollBarWidth}px` : '0px'
         if(status) {
             document.body.style.overflow = 'hidden'
@@ -38,49 +38,49 @@ const MobileMenu = (props: Props) => {
                 <span className={`block w-5 h-0.5 rounded-sm bg-foreground absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-x-0 origin-center rotate-45 transition-transform ${status ? 'scale-x-100' : ''}`} />
                 <span className={`block w-5 h-0.5 rounded-sm bg-foreground absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-x-0 origin-center -rotate-45 transition-transform ${status ? 'scale-x-100' : ''}`} />
             </span>
-            {/* <AnimatePresence> */}
+            <AnimatePresence>
             {
                 // Mobile Menu
-                status && <aside 
-                    // initial={{
-                    //     x: -768
-                    // }}
-                    // animate={{
-                    //     x: 0
-                    // }}
-                    // exit={{
-                    //     x: -768
-                    // }}
-                    // transition={{
-                    //     type: "spring",
-                    //     duration: 0.7,
-                    //     bounce: 0,
-                    // }}
+                status && <motion.aside 
+                    initial={{
+                        x: -768
+                    }}
+                    animate={{
+                        x: 0
+                    }}
+                    exit={{
+                        x: -768
+                    }}
+                    transition={{
+                        type: "spring",
+                        duration: 0.7,
+                        bounce: 0,
+                    }}
                     className={`${status ? 'flex' : 'hidden'} items-center justify-center absolute top-[calc(100%+1px)] inset-x-0 bg-background p-4 border-b border-border h-[calc(100vh-53px)]`}
                 >
                     <div className="container mx-auto px-3 md:max-w-[720px]">
                         <div className="flex flex-col items-center justify-center">
                             {
                                 menu.map((item, index) => (
-                                    <div
-                                        // initial={{
-                                        //     x: -30, 
-                                        //     opacity: 0
-                                        // }} 
-                                        // animate={{
-                                        //     x: 0, 
-                                        //     opacity: status ? 1 : 0
-                                        // }}
-                                        // exit={{
-                                        //     x: -30, 
-                                        //     opacity: 0
-                                        // }}
-                                        // transition={{
-                                        //     type: "spring",
-                                        //     duration: 0.7,
-                                        //     delay: index*0.1,
-                                        //     bounce: 0,
-                                        // }}
+                                    <motion.div
+                                        initial={{
+                                            x: -30, 
+                                            opacity: 0
+                                        }} 
+                                        animate={{
+                                            x: 0, 
+                                            opacity: status ? 1 : 0
+                                        }}
+                                        exit={{
+                                            x: -30, 
+                                            opacity: 0
+                                        }}
+                                        transition={{
+                                            type: "spring",
+                                            duration: 0.7,
+                                            delay: index*0.1,
+                                            bounce: 0,
+                                        }}
                                         key={item?.id}
                                     >
                                         <Link 
@@ -91,28 +91,28 @@ const MobileMenu = (props: Props) => {
                                         >
                                             {item.name}
                                         </Link>
-                                    </div>
+                                    </motion.div>
                                 ))
                             }
-                            <div 
-                                // initial={{
-                                //     x: -30, 
-                                //     opacity: 0
-                                // }} 
-                                // animate={{
-                                //     x: 0, 
-                                //     opacity: status ? 1 : 0
-                                // }}
-                                // exit={{
-                                //     x: -30, 
-                                //     opacity: 0
-                                // }}
-                                // transition={{
-                                //     type: "spring",
-                                //     duration: 0.7,
-                                //     delay: 3*0.1,
-                                //     bounce: 0,
-                                // }}
+                            <motion.div 
+                                initial={{
+                                    x: -30, 
+                                    opacity: 0
+                                }} 
+                                animate={{
+                                    x: 0, 
+                                    opacity: status ? 1 : 0
+                                }}
+                                exit={{
+                                    x: -30, 
+                                    opacity: 0
+                                }}
+                                transition={{
+                                    type: "spring",
+                                    duration: 0.7,
+                                    delay: 3*0.1,
+                                    bounce: 0,
+                                }}
                             >
                                 <Link 
                                     href={contactButton?.link ?? '/contact'} 
@@ -122,12 +122,12 @@ const MobileMenu = (props: Props) => {
                                 >
                                     {contactButton?.name ?? 'Contact'}
                                 </Link>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
-                </aside>
+                </motion.aside>
             }
-            {/* </AnimatePresence> */}
+            </AnimatePresence>
         </div>
     )
 }

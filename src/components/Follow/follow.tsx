@@ -22,7 +22,7 @@ export interface FollowWidget {
 
 
 const Follow = (props: FollowWidget) => {
-  const { data } = props || {};
+  const { data } = props;
   const links = data?.links;
   return (
     <section className='section'>
