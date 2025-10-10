@@ -18,7 +18,7 @@ type Props = {
 
 const Menu = (props: Props) => {
     const {menu} = props || {}
-    const pathname = usePathname()
+    const pathname = usePathname() || null
     return (
         <div className="hidden md:flex items-center justify-end">
             {

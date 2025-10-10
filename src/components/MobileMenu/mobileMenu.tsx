@@ -20,7 +20,7 @@ type Props = {
 const MobileMenu = (props: Props) => {
     const {menu, contactButton} = props || {}
     const { status, toggle, setFalse } = useToggle()
-    const pathname = usePathname()
+    const pathname = usePathname() || null
     useEffect(() => {
         const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
         document.body.style.paddingRight = status ? `${scrollBarWidth}px` : '0px'
