@@ -18,7 +18,7 @@ type Props = {
 }
 
 const MobileMenu = (props: Props) => {
-    const {menu, contactButton} = props
+    const {menu, contactButton} = props || {}
     const { status, toggle, setFalse } = useToggle()
     const pathname = usePathname()
     useEffect(() => {

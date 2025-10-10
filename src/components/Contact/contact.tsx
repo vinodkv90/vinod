@@ -27,7 +27,7 @@ export interface ContactWidget {
 
 
 const Contact = (props: ContactWidget) => {
-  const { data } = props;
+  const { data } = props || {};
   return (
     <section className='pt-10 bg-background'>
         <div className="container mx-auto px-3 md:max-w-[720px]">

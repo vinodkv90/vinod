@@ -5,7 +5,7 @@ import React from "react";
 import { Metadata } from "next";
 
 export default async function Home() {
-  const { data }: RootObject = await nextFetch("/home");
+  const { data }: RootObject = await nextFetch("/home") || {};
 
   return (
     <div className="font-bimbo">
@@ -19,12 +19,12 @@ export default async function Home() {
 }
 
 export const generateMetadata = async (): Promise<Metadata> => {
-  const { data }: RootObject = await nextFetch("/home");
+  const { data }: RootObject = await nextFetch("/home") || {};
   const seo = data?.seo;
 
   if (!seo) return {};
 
-  const { openGraph } = seo;
+  const { openGraph } = seo || {};
 
   return {
     title: seo.metaTitle,

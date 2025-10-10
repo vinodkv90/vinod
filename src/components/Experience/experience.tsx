@@ -18,7 +18,7 @@ export interface ExperienceProps {
 }
 
 const Experience = (props: ExperienceProps) => {
-  const {data} = props;
+  const {data} = props || {};
   return (
     <section className='pt-20 bg-background'>
         <div className="container mx-auto px-3 md:max-w-[720px]">

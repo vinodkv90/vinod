@@ -19,7 +19,7 @@ export type HeroWidget = {
 };
 
 const Hero = (props: HeroWidget) => {
-    const {data} = props
+    const {data} = props || {}
   return (
     <section className='section min-h-[70vh] flex items-center'>
         <div className="container mx-auto px-3 md:max-w-[720px]">

@@ -27,7 +27,7 @@ interface HeaderData {
 
 const Header = async () => {
 
-    const data: HeaderData = await nextFetch('/header') || {};
+    const data: HeaderData = await nextFetch('/header');
 
     return (
         <header className='border-b border-border py-1.5 bg-background sticky top-0 z-10'>

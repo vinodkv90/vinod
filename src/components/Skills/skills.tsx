@@ -17,7 +17,7 @@ export interface SkillProps {
 }
 
 const Skills = (props: SkillProps) => {
-    const { data } = props;
+    const { data } = props || {};
   return (
     <section className='pt-20'>
         <div className="container mx-auto px-3 md:max-w-[720px]">
