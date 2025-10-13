@@ -21,15 +21,15 @@ const MobileMenu = (props: Props) => {
     const {menu, contactButton} = props
     const { status, toggle, setFalse } = useToggle()
     const pathname = usePathname()
-    // useEffect(() => {
-    //     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-    //     document.body.style.paddingRight = status ? `${scrollBarWidth}px` : '0px'
-    //     if(status) {
-    //         document.body.style.overflow = 'hidden'
-    //     } else {
-    //         document.body.style.overflow = 'auto'
-    //     }
-    // }, [status])
+    useEffect(() => {
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.paddingRight = status ? `${scrollBarWidth}px` : '0px'
+        if(status) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'auto'
+        }
+    }, [status])
     return (
         <div className='block md:hidden'>
             <span className={`flex flex-col relative w-6 h-6 justify-center items-end gap-1 cursor-pointer`} onClick={toggle}>
