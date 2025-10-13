@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import Projects from '@/components/Projects'
 import { ProjectsResponse } from '@/types/home';
 import { nextFetch } from '@/utils/nextFetch'

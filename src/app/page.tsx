@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { RootObject } from "@/types/home";
 import { nextFetch } from "@/utils/nextFetch";
 import Block, { WidgetUnion } from "./blocks";
