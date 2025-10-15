@@ -25,7 +25,7 @@ export const nextFetch = async <T = unknown>(
       Accept: "application/json",
     },
     credentials,
-    cache: 'no-store'
+    cache: 'force-cache', // Adjust cache as needed
   };
 
   if (body) {
