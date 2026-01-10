@@ -6,6 +6,7 @@ export const nextFetch = async <T = unknown>(
   headers: Record<string, string> = { "Content-Type": "application/json" },
   body: IFormInput | null = null,
   credentials: RequestCredentials = "include",
+  revalidate: number = 300 // default: 5 minutes
 ): Promise<T> => {
   if (!slug) {
     throw new Error("Slug is required");
@@ -25,7 +26,7 @@ export const nextFetch = async <T = unknown>(
       Accept: "application/json",
     },
     credentials,
-    cache: "no-store", // Adjust cache as needed
+    next: { revalidate }, // ✅ ISR instead of no-store
   };
 
   if (body) {
