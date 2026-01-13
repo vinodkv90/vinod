@@ -14,7 +14,7 @@ const useContactForm = () => {
 
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
         const response = await nextFetch<ContactResponse>(
-            '/contact/submit', 
+            '/contact-forms', 
             'POST',
             {
                 'Content-Type': 'application/json',
