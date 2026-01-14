@@ -1,4 +1,5 @@
 import { IFormInput } from "@/types/contact"
+import { RootObject } from "@/types/home";
 import { nextFetch } from "@/utils/nextFetch"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { toast } from "sonner"
@@ -30,6 +31,16 @@ const useContactForm = () => {
             toast.error('Something went wrong. Please try again later.')
         }
     }
+
+    setTimeout(async () => {
+        console.log('Server health check!', errors);
+        const { data }: RootObject = await nextFetch("/about");
+        if(data) {
+            console.log('Server is healthy:', data);
+        } else {
+            console.error('Server health check failed:', data);
+        }
+    }, 60000*5); // Check server health every 5 minutes
 
     return {
         handleSubmit,
