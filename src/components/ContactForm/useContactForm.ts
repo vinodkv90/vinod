@@ -23,9 +23,11 @@ const useContactForm = () => {
             "include"
         )
         console.log('response', response);
-        if(response) {
+        if(response?.data) {
             reset()
             toast.success(response.message)
+        } else {
+            toast.error('Something went wrong. Please try again later.')
         }
     }
 

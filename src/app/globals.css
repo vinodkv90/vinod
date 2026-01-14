@@ -112,3 +112,10 @@ body {
     @apply h-12 px-6;
   }
 }
+
+.toast-title {
+  @apply !font-montserrat font-bold;
+}
+.toast-icon {
+  @apply translate-y-[1px];
+}
